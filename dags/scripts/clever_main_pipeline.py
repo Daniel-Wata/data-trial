@@ -7,7 +7,7 @@ def upload_to_postgres(**kwargs):
     table_name = file_name.split('.')[0]
     
     raw_df = pd.read_csv(
-        f'dags/scripts/data_examples/{file_name}'
+        f'dags/scripts/data_examples/{file_name}',escapechar="\\"
     )
 
     upload_overwrite_table(raw_df, table_name)
