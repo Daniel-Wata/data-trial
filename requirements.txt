@@ -1,4 +1,5 @@
 apache-airflow-providers-apache-kafka
+apache-airflow-providers-postgres
 kafka-python
 pyspark
 pyhive
@@ -10,3 +11,6 @@ pandas
 pyarrow
 fastparquet
 great_expectations
+fuzzywuzzy[speedup]
+textblob
+nltk

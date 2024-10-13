@@ -31,3 +31,37 @@ Moving company data set (files can be found at 'dags/scripts/data_examples' fold
 
 ## Getting started
 To get started with Airflow check the [getting started](docs/getting_started.md) documentation.
+
+
+
+# Notes on the data
+
+## Tables general overview
+From looking at the data I understood that the tables can be "divided" in two sections, google related data and FMCSA data.
+
+### Google data
+
+From Google we have 2 tables: 
+- company_profiles_google_maps:
+    - General data about each company
+    - google_id is the primary key
+- customer_reviews_google
+    - Pretty self explanatory, holds reviews from google about each company
+    - also uses google_id as key
+
+### FMCSA data
+
+From the FMCSA we have 4 tables, all using usdot_num as primary key
+- fmcsa_companies:
+    - General data about each company
+- fmcsa_safer_data:
+    - Holds information about safety checks on each company
+- fmcsa_company_snapshot:
+    - Seems to be a table of snapshots taken for each company information
+- fmcsa_complaints:
+    - Clients complaints about each company
+
+## Possible joins
+
+After understanding the general data present in each table, I looked out for possible joins that could enrich or connect the data, the joins in google and fmcsa sections are pretty obvious and easy but looking at the tables there isn't a common key to join Google companies to the FMCSA companies (Might do a fuzzy match using different informations in each dataset)
+
