@@ -39,8 +39,7 @@ with DAG("sentiment_analysis", default_args=default_args, catchup=False, schedul
     calculate_sentiment_task = PythonOperator(
         task_id='calculate_sentiment',
         python_callable=calculate_sentiment,
-        provide_context=True,
-        execution_timeout=timedelta(minutes=1)
+        provide_context=True
     )
 
     group_sentiment_by_company_task = PythonOperator(
