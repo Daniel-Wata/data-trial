@@ -13,4 +13,3 @@ fastparquet
 great_expectations
 fuzzywuzzy[speedup]
 textblob
-nltk

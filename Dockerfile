@@ -17,7 +17,6 @@ RUN chmod a+r /opt/airflow/jars/spark-hadoop-cloud_2.12-3.4.1.jar \
 
 RUN apt-get update && apt-get install -y iputils-ping
 
-
 USER airflow
 
 COPY requirements.txt .
